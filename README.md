@@ -18,6 +18,7 @@ npm create vite@latest root-app -- --template react-ts
 npm create vite@latest header-app -- --template react-ts
 
 # 2️⃣ Instalar as dependências
+
 Navegue em cada projeto (root-app e header-app) e instale o plugin de Module Federation:
 
 npm install @originjs/vite-plugin-federation

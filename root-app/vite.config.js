@@ -8,13 +8,16 @@ export default defineConfig({
   },
   server: {
     port: 4173,
+    strictPort: true, // 👈 força o Vite a usar exatamente essa porta, senão dá erro
     open: true,
   },
+  
   plugins: [
     react(),
     federation({
       remotes: {
         header_app: 'http://localhost:4174/assets/remoteEntry.js',
+        login_app: 'http://localhost:4175/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom'],
     }),

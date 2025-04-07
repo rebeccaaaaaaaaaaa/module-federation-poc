@@ -4,17 +4,17 @@ import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
   server: {
-    port: 4174,
+    port: 4175,
     open: true,
     strictPort: true,
   },
   plugins: [
     react(),
     federation({
-      name: 'header_app',
+      name: 'login_app',
       filename: 'remoteEntry.js',
       exposes: {
-        './Header': './src/components/Header.tsx',
+        './Login': './src/components/Login.tsx',
       },
       shared: ['react', 'react-dom'],
     }),
@@ -23,6 +23,5 @@ export default defineConfig({
     target: 'esnext',
     minify: false,
     cssCodeSplit: false,
-  },
-  dev: true
+  }
 });
