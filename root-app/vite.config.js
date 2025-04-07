@@ -27,14 +27,11 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      remotes: {
-        remotes: {
-          header_app: `${import.meta.env.VITE_HEADER_APP_URL}/assets/remoteEntry.js`,
-          login_app: `${import.meta.env.VITE_LOGIN_APP_URL}/assets/remoteEntry.js`,
-          home_app: `${import.meta.env.VITE_HOME_APP_URL}/assets/remoteEntry.js`,
-        }
-        
-      },
+      // remotes: {
+      //   header_app: 'http://localhost:4174/assets/remoteEntry.js',
+      //   login_app: 'http://localhost:4175/assets/remoteEntry.js',
+      //   home_app: 'http://localhost:4176/assets/remoteEntry.js',
+      // },
       shared: {
         react: { singleton: true },
         'react-dom': { singleton: true },
