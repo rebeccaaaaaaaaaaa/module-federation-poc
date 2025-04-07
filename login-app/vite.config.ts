@@ -16,7 +16,7 @@ export default defineConfig({
       exposes: {
         './Login': './src/components/Login.tsx',
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', '@mantine/core', '@mantine/hooks'],
     }),
   ],
   build: {

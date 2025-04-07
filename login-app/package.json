@@ -10,6 +10,8 @@
     "preview": "vite preview --port 4175"
   },
   "dependencies": {
+    "@mantine/core": "^7.17.3",
+    "@mantine/hooks": "^7.17.3",
     "@originjs/vite-plugin-federation": "^1.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

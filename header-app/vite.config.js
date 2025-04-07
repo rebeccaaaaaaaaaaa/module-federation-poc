@@ -16,7 +16,7 @@ export default defineConfig({
       exposes: {
         './Header': './src/components/Header.tsx',
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', '@mantine/core', '@mantine/hooks'],
     }),
   ],
   build: {

@@ -1,11 +1,12 @@
-import React from 'react';
+import { Box, Title } from '@mantine/core'
+import React from 'react'
 
 const Header = () => {
   return (
-    <header style={{ padding: '1rem', background: '#282c34', color: 'white' }}>
-      <h1>Microfrontend Header</h1>
-    </header>
-  );
-};
+    <Box component="header" p="md" bg="#282c34" c="white">
+      <Title order={2}>Microfrontend Header</Title>
+    </Box>
+  )
+}
 
-export default Header;
+export default Header
