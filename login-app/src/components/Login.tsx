@@ -1,16 +1,57 @@
-import { Box, Title, TextInput, Button, Paper } from '@mantine/core'
+// src/pages/LoginPage.tsx
 
-function Login() {
-  return (
-    <Box maw={300} mx="auto" mt="xl">
-      <Paper shadow="md" radius="md" p="lg" withBorder>
-        <Title order={3} mb="md">Login</Title>
-        <TextInput label="Email" placeholder="seu@email.com" mb="sm" />
-        <TextInput label="Senha" placeholder="••••••••" type="password" mb="md" />
-        <Button fullWidth>Entrar</Button>
-      </Paper>
-    </Box>
-  )
+import React, { useState } from 'react';
+import {
+  Container,
+  Paper,
+  TextInput,
+  PasswordInput,
+  Button,
+  Title,
+  Space,
+} from '@mantine/core';
+
+interface LoginPageProps {
+  login: () => void;
 }
 
-export default Login
+export const LoginPage: React.FC<LoginPageProps> = ({ login }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    if (email && password) {
+      login();
+    } else {
+      alert('Preencha o e-mail e a senha.');
+    }
+  };
+
+  return (
+    <Container size={420} my={40}>
+      <Title>Bem-vindo de volta</Title>
+      <Space h="md" />
+
+      <Paper withBorder shadow="md" p={30} radius="md">
+        <TextInput
+          label="E-mail"
+          placeholder="voce@exemplo.com"
+          value={email}
+          onChange={(event) => setEmail(event.currentTarget.value)}
+          required
+        />
+        <PasswordInput
+          label="Senha"
+          placeholder="Sua senha"
+          value={password}
+          onChange={(event) => setPassword(event.currentTarget.value)}
+          required
+          mt="md"
+        />
+        <Button fullWidth mt="xl" onClick={handleLogin}>
+          Entrar
+        </Button>
+      </Paper>
+    </Container>
+  );
+};

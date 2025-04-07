@@ -1,8 +1,9 @@
-import React, { Suspense } from 'react';
-import { MantineProvider } from '@mantine/core'
+import React, { Suspense } from "react";
+import { MantineProvider, TextInput } from "@mantine/core";
+import '@mantine/core/styles.css';
 
-const Header = React.lazy(() => import('header_app/Header'));
-const Login = React.lazy(() => import('login_app/Login'));
+const Header = React.lazy(() => import("header_app/Header"));
+const Login = React.lazy(() => import("login_app/Login"));
 
 function App() {
   return (
