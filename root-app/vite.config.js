@@ -1,10 +1,9 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import federation from '@originjs/vite-plugin-federation';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import federation from "@originjs/vite-plugin-federation";
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,12 +11,12 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   resolve: {
     alias: {
-      '@mantine/core': path.resolve(__dirname, 'node_modules/@mantine/core'),
-      '@mantine/hooks': path.resolve(__dirname, 'node_modules/@mantine/hooks'),
+      "@mantine/core": path.resolve(__dirname, "node_modules/@mantine/core"),
+      "@mantine/hooks": path.resolve(__dirname, "node_modules/@mantine/hooks"),
     },
   },
   build: {
-    target: 'esnext',
+    target: "esnext",
   },
   server: {
     port: 4173,
@@ -27,20 +26,20 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      // remotes: {
-      //   header_app: 'http://localhost:4174/assets/remoteEntry.js',
-      //   login_app: 'http://localhost:4175/assets/remoteEntry.js',
-      //   home_app: 'http://localhost:4176/assets/remoteEntry.js',
-      // },
+      remotes: {
+        header_app: "https://header-app.netlify.app/assets/remoteEntry.js",
+        login_app: "https://mf-login-app.netlify.app/assets/remoteEntry.js",
+        home_app: "https://mf-home-app.netlify.app/assets/remoteEntry.js",
+      },
       shared: {
         react: { singleton: true },
-        'react-dom': { singleton: true },
-        '@mantine/core': {
+        "react-dom": { singleton: true },
+        "@mantine/core": {
           singleton: true,
           requiredVersion: false,
           includeSecondaries: true,
         },
-        '@mantine/hooks': {
+        "@mantine/hooks": {
           singleton: true,
           requiredVersion: false,
         },
