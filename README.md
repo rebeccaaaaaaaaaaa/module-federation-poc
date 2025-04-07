@@ -23,6 +23,11 @@ Navegue em cada projeto (root-app e header-app) e instale o plugin de Module Fed
 
 npm install @originjs/vite-plugin-federation
 
+Mantine básico
+
+npm install @mantine/core @mantine/hooks
+
+
 ⚠️ Importante: esse comando deve ser executado dentro de cada app.
 
 # 3️⃣ Configurar o vite.config.ts do header-app

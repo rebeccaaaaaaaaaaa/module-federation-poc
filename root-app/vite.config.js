@@ -31,6 +31,7 @@ export default defineConfig({
       remotes: {
         header_app: 'http://localhost:4174/assets/remoteEntry.js',
         login_app: 'http://localhost:4175/assets/remoteEntry.js',
+        home_app: 'http://localhost:4176/assets/remoteEntry.js',
       },
       shared: {
         react: { singleton: true },
