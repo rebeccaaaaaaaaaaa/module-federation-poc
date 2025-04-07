@@ -5,7 +5,7 @@ import federation from '@originjs/vite-plugin-federation';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// simular __dirname
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -14,7 +14,6 @@ export default defineConfig({
     alias: {
       '@mantine/core': path.resolve(__dirname, 'node_modules/@mantine/core'),
       '@mantine/hooks': path.resolve(__dirname, 'node_modules/@mantine/hooks'),
-      // você pode adicionar mais aliases aqui se quiser
     },
   },
   build: {
@@ -29,9 +28,12 @@ export default defineConfig({
     react(),
     federation({
       remotes: {
-        header_app: 'http://localhost:4174/assets/remoteEntry.js',
-        login_app: 'http://localhost:4175/assets/remoteEntry.js',
-        home_app: 'http://localhost:4176/assets/remoteEntry.js',
+        remotes: {
+          header_app: `${import.meta.env.VITE_HEADER_APP_URL}/assets/remoteEntry.js`,
+          login_app: `${import.meta.env.VITE_LOGIN_APP_URL}/assets/remoteEntry.js`,
+          home_app: `${import.meta.env.VITE_HOME_APP_URL}/assets/remoteEntry.js`,
+        }
+        
       },
       shared: {
         react: { singleton: true },
