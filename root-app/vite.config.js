@@ -8,42 +8,47 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default defineConfig({
-  resolve: {
-    alias: {
-      "@mantine/core": path.resolve(__dirname, "node_modules/@mantine/core"),
-      "@mantine/hooks": path.resolve(__dirname, "node_modules/@mantine/hooks"),
+export default defineConfig(() => {
+  return {
+    resolve: {
+      alias: {
+        "@mantine/core": path.resolve(__dirname, "node_modules/@mantine/core"),
+        "@mantine/hooks": path.resolve(
+          __dirname,
+          "node_modules/@mantine/hooks"
+        ),
+      },
     },
-  },
-  build: {
-    target: "esnext",
-  },
-  server: {
-    port: 4173,
-    strictPort: true,
-    open: true,
-  },
-  plugins: [
-    react(),
-    federation({
-      remotes: {
-        header_app: "https://header-app.netlify.app/assets/remoteEntry.js",
-        login_app: "https://mf-login-app.netlify.app/assets/remoteEntry.js",
-        home_app: "https://mf-home-app.netlify.app/assets/remoteEntry.js",
-      },
-      shared: {
-        react: { singleton: true },
-        "react-dom": { singleton: true },
-        "@mantine/core": {
-          singleton: true,
-          requiredVersion: false,
-          includeSecondaries: true,
+    build: {
+      target: "esnext",
+    },
+    server: {
+      port: 4173,
+      strictPort: true,
+      open: true,
+    },
+    plugins: [
+      react(),
+      federation({
+        remotes: {
+          header_app: "http://localhost:4174/assets/remoteEntry.js",
+          login_app: "http://localhost:4175/assets/remoteEntry.js",
+          home_app: "http://localhost:4176/assets/remoteEntry.js",
         },
-        "@mantine/hooks": {
-          singleton: true,
-          requiredVersion: false,
+        shared: {
+          react: { singleton: true },
+          "react-dom": { singleton: true },
+          "@mantine/core": {
+            singleton: true,
+            requiredVersion: false,
+            includeSecondaries: true,
+          },
+          "@mantine/hooks": {
+            singleton: true,
+            requiredVersion: false,
+          },
         },
-      },
-    }),
-  ],
+      }),
+    ],
+  };
 });

@@ -1,6 +1,6 @@
 // src/pages/LoginPage.tsx
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Container,
   Paper,
@@ -15,7 +15,7 @@ interface LoginPageProps {
   login: () => void;
 }
 
-export const LoginPage: React.FC<LoginPageProps> = ({ login }) => {
+export default function Login({ login }: LoginPageProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
