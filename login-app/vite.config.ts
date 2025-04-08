@@ -7,6 +7,10 @@ export default defineConfig({
     port: 4175,
     open: true,
     strictPort: true,
+    cors: {
+      origin: "*", // ou: (origin) => true
+      methods: ["GET", "POST"],
+    },
   },
   plugins: [
     react(),

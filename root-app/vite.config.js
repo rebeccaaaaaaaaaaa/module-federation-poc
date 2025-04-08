@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
 
@@ -8,7 +8,26 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
+  /* eslint-disable no-undef */
+  const env = loadEnv(mode, process.cwd(), "VITE_");
+  const isProd = mode === "production";
+
+  const remotes = {
+    header_app: {
+      external: isProd ? env.VITE_HEADER_APP_URL : env.VITE_HEADER_APP_URL_DEV,
+      format: "esm",
+    },
+    login_app: {
+      external: isProd ? env.VITE_LOGIN_APP_URL : env.VITE_LOGIN_APP_URL_DEV,
+      format: "esm",
+    },
+    home_app: {
+      external: isProd ? env.VITE_HOME_APP_URL : env.VITE_HOME_APP_URL_DEV,
+      format: "esm",
+    },
+  };
+
   return {
     resolve: {
       alias: {
@@ -26,15 +45,15 @@ export default defineConfig(() => {
       port: 4173,
       strictPort: true,
       open: true,
+      cors: {
+        origin: "*",
+        methods: ["GET", "POST"],
+      },
     },
     plugins: [
       react(),
       federation({
-        remotes: {
-          header_app: "http://localhost:4174/assets/remoteEntry.js",
-          login_app: "http://localhost:4175/assets/remoteEntry.js",
-          home_app: "http://localhost:4176/assets/remoteEntry.js",
-        },
+        remotes,
         shared: {
           react: { singleton: true },
           "react-dom": { singleton: true },
