@@ -4,7 +4,7 @@ import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
   server: {
-    port: 4173,
+    port: 4174,
   },
   build: {
     target: 'esnext',
@@ -19,7 +19,7 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './Header': './src/components/Header/index.tsx',
-      },      
+      },    
       shared: ['react', 'react-dom'],
     }),
   ],

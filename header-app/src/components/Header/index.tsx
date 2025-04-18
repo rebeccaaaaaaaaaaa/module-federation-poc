@@ -1,5 +1,10 @@
 const Header = () => {
-  return <header>Header federado funcionando 🎉</header>;
-};
+  return (
+    <header>
+      <h1>Header remoto</h1>
+      <p>Esse é um header remoto</p>
+    </header>
+  );
+}
 
 export default Header;
