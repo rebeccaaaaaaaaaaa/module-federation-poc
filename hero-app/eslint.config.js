@@ -2,21 +2,6 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-<<<<<<< HEAD
-
-export default [
-  { ignores: ['dist'] },
-  {
-    files: ['**/*.{js,jsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-=======
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
@@ -27,28 +12,17 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
->>>>>>> 1a024e4 (chore: create a boiler plate)
     },
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
     rules: {
-<<<<<<< HEAD
-      ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-=======
-      ...reactHooks.configs.recommended.rules,
->>>>>>> 1a024e4 (chore: create a boiler plate)
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
     },
   },
-<<<<<<< HEAD
-]
-=======
 )
->>>>>>> 1a024e4 (chore: create a boiler plate)
