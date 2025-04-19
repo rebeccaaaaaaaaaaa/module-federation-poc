@@ -20,7 +20,27 @@ export default defineConfig({
       exposes: {
         './Header': './src/components/Header/index.tsx',
       },    
-      shared: ['react', 'react-dom'],
+      shared: {
+        react: {
+          version: '18.2.0'
+        },
+        'react-dom': {
+          version: '18.2.0'
+        },
+        '@chakra-ui/react': {
+          version: '2.8.1'
+        },
+        '@emotion/react': {
+          version: '11.11.1'
+        },
+        '@emotion/styled': {
+          version: '11.11.0'
+        },
+        'framer-motion': {
+          version: '10.16.3'
+        }
+      }
+      
     }),
   ],
 });

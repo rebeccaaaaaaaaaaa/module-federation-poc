@@ -1,8 +1,11 @@
 import  Header from "./components/Header";
-
+import { ChakraProvider } from '@chakra-ui/react'
+import { system } from './theme';
 function App() {
   return (
-    <Header />
+    <ChakraProvider value={system}>
+      <Header />
+    </ChakraProvider>
   );
 }
 
