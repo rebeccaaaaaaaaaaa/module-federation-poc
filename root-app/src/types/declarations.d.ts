@@ -1,5 +1,4 @@
 declare module 'header_app/Header' {
-<<<<<<< HEAD
     import { ComponentType } from 'react';
     const Header: ComponentType<unknown>;
     export default Header;
@@ -10,10 +9,10 @@ declare module 'header_app/Header' {
     const About: ComponentType<unknown>;
     export default About;
   }
+
+declare module 'login_app/Login' {
+    import { ComponentType } from 'react';
+    const Login: ComponentType<unknown>;
+    export default Login;
+  }
   
-=======
-  import { ComponentType } from 'react';
-  const Header: ComponentType<unknown>;
-  export default Header;
-}
->>>>>>> 5765ca5 (feat: create first expose and fix all errors about this)

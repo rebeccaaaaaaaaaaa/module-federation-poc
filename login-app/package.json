@@ -10,9 +10,13 @@
     "preview": "vite preview --port 4175"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.16.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
     "@originjs/vite-plugin-federation": "^1.4.0",
+    "framer-motion": "^12.7.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

@@ -1,9 +1,13 @@
 import Header from "header_app/Header";
-
+import Login from "login_app/Login";
 export default function App() {
-  console.log("Header remoto:", Header);
-
   if (!Header) return <div>Header não carregado</div>;
+  if (!Login) return <div>Login não carregado</div>;
 
-  return <Header />;
+  return (
+    <>
+     <Header />
+     <Login />
+    </>
+  );
 }

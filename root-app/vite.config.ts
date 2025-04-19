@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   const headerAppUrl = env.VITE_ENTRY_HEADER_APP_URL;
+  const loginAppUrl = env.VITE_ENTRY_LOGIN_APP_URL;
 
   if (!headerAppUrl) {
     throw new Error('VITE_ENTRY_HEADER_APP_URL não está definido');
@@ -21,6 +22,7 @@ export default defineConfig(({ mode }) => {
         name: 'root_app',
         remotes: {
           header_app: headerAppUrl,
+          login_app: loginAppUrl,
         },
         shared: {
           react: {

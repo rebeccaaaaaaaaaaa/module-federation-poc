@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import federation from '@originjs/vite-plugin-federation';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
   server: {
@@ -8,24 +8,43 @@ export default defineConfig({
     open: true,
     strictPort: true,
     cors: {
-      origin: "*", // ou: (origin) => true
+      origin: "*",
       methods: ["GET", "POST"],
     },
   },
   plugins: [
     react(),
     federation({
-      name: 'login_app',
-      filename: 'remoteEntry.js',
+      name: "login_app",
+      filename: "remoteEntry.js",
       exposes: {
-        './Login': './src/components/Login.tsx',
+        "./Login": "./src/components/Login.tsx",
       },
-      shared: ['react', 'react-dom', '@mantine/core', '@mantine/hooks'],
+      shared: {
+        react: {
+          version: "18.2.0",
+        },
+        "react-dom": {
+          version: "18.2.0",
+        },
+        "@chakra-ui/react": {
+          version: "2.8.1",
+        },
+        "@emotion/react": {
+          version: "11.11.1",
+        },
+        "@emotion/styled": {
+          version: "11.11.0",
+        },
+        "framer-motion": {
+          version: "10.16.3",
+        },
+      },
     }),
   ],
   build: {
-    target: 'esnext',
+    target: "esnext",
     minify: false,
     cssCodeSplit: false,
-  }
+  },
 });
