@@ -17,6 +17,9 @@ export default defineConfig({
     federation({
       name: "login_app",
       filename: "remoteEntry.js",
+      remotes: {
+        root_app: 'http://localhost:5000/assets/remoteEntry.js', // Ajuste a URL conforme necessário
+      },
       exposes: {
         "./Login": "./src/components/Login.tsx",
       },
@@ -38,6 +41,9 @@ export default defineConfig({
         },
         "framer-motion": {
           version: "10.16.3",
+        },
+        zustand: {
+          version: "4.2.0",
         },
       },
     }),

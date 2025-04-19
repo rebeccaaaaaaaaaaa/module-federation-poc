@@ -1,13 +1,16 @@
-import { Input, Box, Button } from "@chakra-ui/react";
+// login-app/src/Login.tsx
+
+import { Button } from '@chakra-ui/react';
+import { useAuth } from 'root_app/AuthProvider';
 
 const Login = () => {
-  return(
-    <Box>
-      <Input placeholder="Username" size="md" mb={4} />
-      <Input placeholder="Password" size="md" type="password" mb={4} />
-      <Button colorScheme="blue" size="md">Login</Button>
-    </Box>
-  )
-}
+  const { handleLogin } = useAuth(); // Usa o contexto de autenticação
+
+  return (
+    <div>
+      <Button onClick={handleLogin}>Login</Button>
+    </div>
+  );
+};
 
 export default Login;

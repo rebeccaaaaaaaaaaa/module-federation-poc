@@ -20,6 +20,9 @@ export default defineConfig(({ mode }) => {
       react(),
       federation({
         name: 'root_app',
+        exposes: {
+          './AuthProvider': './src/contexts/AuthContext.tsx',
+        },
         remotes: {
           header_app: headerAppUrl,
           login_app: loginAppUrl,
@@ -42,7 +45,10 @@ export default defineConfig(({ mode }) => {
           },
           'framer-motion': {
             version: '10.16.3'
-          }
+          },
+          'zustand': {
+            version: '4.2.0'
+          },
         }
         
       }),
