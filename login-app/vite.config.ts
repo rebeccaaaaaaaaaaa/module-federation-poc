@@ -18,10 +18,10 @@ export default defineConfig({
       name: "login_app",
       filename: "remoteEntry.js",
       remotes: {
-        root_app: 'http://localhost:5000/assets/remoteEntry.js', // Ajuste a URL conforme necessário
+        root_app: 'http://localhost:5000/assets/remoteEntry.js',
       },
       exposes: {
-        "./Login": "./src/components/Login.tsx",
+        "./Login": "./src/components/Login",
       },
       shared: {
         react: {

@@ -9,17 +9,8 @@ declare module "about_app/About" {
   const About: ComponentType<unknown>;
   export default About;
 }
-
-declare module "login_app/Login" {
-  import { ComponentType } from "react";
-  const Login: ComponentType<unknown>;
-  export default Login;
-}
-
 declare module "root_app/AuthContext" {
   import { ComponentType } from "react";
-
-  // Exporte o que você está consumindo do 'root-app'
   export const useAuth: () => {
     isAuthenticated: boolean;
     login: () => void;
@@ -27,4 +18,10 @@ declare module "root_app/AuthContext" {
   };
 
   export const AuthProvider: ComponentType<unknown>;
+}
+
+declare module "login_app/Login" {
+  import { ComponentType } from "react";
+  const Login: ComponentType<unknown>;
+  export default Login;
 }

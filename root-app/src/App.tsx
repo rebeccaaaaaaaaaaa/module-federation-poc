@@ -5,9 +5,9 @@ export default function App() {
   if (!Login) return <div>Login não carregado</div>;
 
   return (
-    <>
+    <div>
      <Header />
      <Login />
-    </>
+    </div>
   );
 }
