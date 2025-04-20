@@ -40,7 +40,6 @@ export default defineConfig({
           version: '10.16.3'
         }
       }
-      
     }),
   ],
 });

@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "dev": "concurrently \"npm --prefix header-app run dev\" \"npm --prefix login-app run dev\" \"npm --prefix root-app run dev\"",
+    "dev": "concurrently \"npm --prefix header-app run dev\" \"npm --prefix login-app run dev\" \"npm --prefix root-app run dev\" \"npm --prefix hero-app run dev\"",
     "build-e-preview": "npm run build:tudo && npm run preview:tudo",
-    "build:tudo": "npm --prefix header-app run build && npm --prefix login-app run build && npm --prefix root-app run build",
-    "preview:tudo": "concurrently \"npm --prefix header-app run preview\" \"npm --prefix login-app run preview\" \"npm --prefix root-app run preview\""
+    "build:tudo": "npm --prefix header-app run build && npm --prefix login-app run build && npm --prefix root-app run build && npm --prefix hero-app run build",
+    "preview:tudo": "concurrently \"npm --prefix header-app run preview\" \"npm --prefix login-app run preview\" \"npm --prefix root-app run preview\" \"npm --prefix hero-app run preview\""
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

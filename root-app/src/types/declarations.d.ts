@@ -25,3 +25,9 @@ declare module "login_app/Login" {
   const Login: ComponentType<unknown>;
   export default Login;
 }
+
+declare module "hero_app/Hero" {
+  import { ComponentType } from "react";
+  const Hero: ComponentType<unknown>;
+  export default Hero;
+}
