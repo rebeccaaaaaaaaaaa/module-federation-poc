@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   const headerAppUrl = env.VITE_ENTRY_HEADER_APP_URL;
   const loginAppUrl = env.VITE_ENTRY_LOGIN_APP_URL;
   const heroAppUrl = env.VITE_ENTRY_HERO_APP_URL;
+  const aboutAppUrl = env.VITE_ENTRY_ABOUT_APP_URL;
 
   if (!headerAppUrl) {
     throw new Error('VITE_ENTRY_HEADER_APP_URL não está definido');
@@ -28,6 +29,7 @@ export default defineConfig(({ mode }) => {
           header_app: headerAppUrl,
           login_app: loginAppUrl,
           hero_app: heroAppUrl,
+          about_app: aboutAppUrl,
         },
         shared: {
           react: {

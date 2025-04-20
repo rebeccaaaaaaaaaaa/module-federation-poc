@@ -31,3 +31,9 @@ declare module "hero_app/Hero" {
   const Hero: ComponentType<unknown>;
   export default Hero;
 }
+
+declare module "about_app/About" {
+  import { ComponentType } from "react";
+  const About: ComponentType<unknown>;
+  export default About;
+}
