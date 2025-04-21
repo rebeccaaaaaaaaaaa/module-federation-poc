@@ -5,7 +5,7 @@ import TrilhasIcon from "../assets/icon-trilhas.png";
 import Card from "../components/Cards";
 function About() {
   return (
-    <Container maxW="container.xl" p={4}>
+    <Container maxW="container.xl" p={4} mt={10}>
       <Flex justifyContent="space-between">
         <Text
           fontWeight="bold"
