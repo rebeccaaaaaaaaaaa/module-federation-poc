@@ -1,31 +1,18 @@
-import { Box, Button, Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import HeroBg from "../../assets/hero.png";
+import {
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import PlatformIcon from "../../assets/platform-icon.png";
 import PlayIcon from "../../assets/Play.png";
+
+
 function Hero() {
   return (
-    <Box
-      as="section"
-      display={"flex"}
-      justifyContent="center"
-      alignItems="left"
-      flexDirection="column"
-      className="hero"
-      p={4}
-      bg="teal.500"
-      color="white"
-      textAlign="left"
-      backgroundImage={`url(${HeroBg})`}
-      backgroundSize="cover"
-      backgroundRepeat="no-repeat"
-      backgroundPosition={
-        { base: "center", sm: "center", md: "top", lg: "top", xl: "top" }
-      }
-      height={
-        { base: "100vh", sm: "100vh", md: "700px", lg: "800px",}
-      }
-    >
-      <Container maxW="container.xl" textAlign="left" paddingTop="100px">
+    <Container maxW="container.xl" textAlign="left" paddingTop="10rem">
       <Flex
         p={4}
         width="10/12"
@@ -78,8 +65,7 @@ function Hero() {
           </Flex>
         </Flex>
       </Flex>
-      </Container>
-    </Box>
+    </Container>
   );
 }
 

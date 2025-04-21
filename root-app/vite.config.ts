@@ -10,10 +10,6 @@ export default defineConfig(({ mode }) => {
   const heroAppUrl = env.VITE_ENTRY_HERO_APP_URL;
   const aboutAppUrl = env.VITE_ENTRY_ABOUT_APP_URL;
 
-  if (!headerAppUrl) {
-    throw new Error('VITE_ENTRY_HEADER_APP_URL não está definido');
-  }
-
   return {
     build: {
       target: 'esnext',
