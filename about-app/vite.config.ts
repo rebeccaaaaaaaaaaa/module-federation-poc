@@ -18,7 +18,7 @@ export default defineConfig({
       name: 'about_app',
       filename: 'remoteEntry.js',
       exposes: {
-        './About': './src/components/About/index.tsx',
+        './About': './src/pages/About',
       },    
       shared: {
         react: {
