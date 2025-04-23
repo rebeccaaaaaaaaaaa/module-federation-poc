@@ -1,0 +1,66 @@
+{
+  "data": {
+    "id": "cd527b7a-5501-44b7-9f48-97e622e4c59a",
+    "razaoSocial": "TESTE UPDATE INTERMITENTE",
+    "cnpj": "",
+    "idTipoCadastro": 1,
+    "tipoCadastro": "NOVO FUNDO",
+    "condominio": "Não Informado",
+    "exercicioSocialFundo": "",
+    "tipoFidic": "",
+    "classificacaoAnbima": "",
+    "contemArquivos": false,
+    "consultorias": [],
+    "direitosCreditorios": [],
+    "taxa": [
+      {
+        "taxaTipoDescricao": "Taxa de Administração",
+        "taxaAaPl": "2.2",
+        "valorMinimo": "333.33",
+        "valorMaximo": "333.33",
+        "observacoes": "VVVVVV"
+      },
+      {
+        "taxaTipoDescricao": "Taxa de Gestao",
+        "taxaAaPl": "5.5",
+        "valorMinimo": "6.66",
+        "valorMaximo": "6.66",
+        "observacoes": "FGFGFG"
+      },
+      {
+        "taxaTipoDescricao": "Taxa de Custodia",
+        "taxaAaPl": "4.4",
+        "valorMinimo": "4444.44",
+        "valorMaximo": "4444.44",
+        "observacoes": "ddddddd"
+      },
+      {
+        "taxaTipoDescricao": "Taxa de Distribuicao",
+        "observacoes": ""
+      },
+      {
+        "taxaTipoDescricao": "Remuneração da Consultora Especializada",
+        "observacoes": ""
+      },
+      {
+        "taxaTipoDescricao": "Remuneração do Agente de Cobrança",
+        "observacoes": ""
+      },
+      {
+        "taxaTipoDescricao": "Outras Despesas",
+        "observacoes": ""
+      }
+    ],
+    "contaBancaria": [],
+    "contato": []
+  },
+  "messages": [
+    {
+      "key": "GetById",
+      "message": "Operação Executada com Sucesso",
+      "type": "Success",
+      "typeCode": 0
+    }
+  ],
+  "hasErrors": false
+}
