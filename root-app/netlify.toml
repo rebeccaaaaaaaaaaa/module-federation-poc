@@ -1,6 +1,6 @@
 [build]
-  base = "root-app" # <- garante que ele entre na pasta certa
-  command = "npm install && npm run build"
+  base = "root-app"
+  command = "npm install"
   publish = "dist"
 
 [build.environment]
