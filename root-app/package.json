@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 5000",
+    "prebuild": "npm install -g vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --port 5000"
@@ -32,7 +33,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "postcss-preset-mantine": "^1.17.0",
-    "vite": "^6.2.5",
+    "vite": "^6.3.5",
     "vite-plugin-federation": "^0.0.1"
   }
 }
