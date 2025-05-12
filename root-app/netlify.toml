@@ -4,6 +4,7 @@
   publish = "dist"
 
 [build.environment]
+  NODE_VERSION = "20.10.0"
   NODE_ENV = "production"
   VITE_ENTRY_HEADER_APP_URL = "https://mf-header-poc.netlify.app/assets/remoteEntry.js"
   VITE_ENTRY_LOGIN_APP_URL = "https://mf-login.netlify.app/assets/remoteEntry.js"
